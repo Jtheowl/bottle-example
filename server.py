@@ -4,7 +4,8 @@ APP = bottle.default_app()
 
 @APP.route('/')
 def index():
-  return '<p>Message changed by Jtheowl</p>'
+  bottle.response.content_type = 'text/html'
+  return bottle.static_file('index.html', '.')
 
 @APP.route('/ping')
 def ping():
